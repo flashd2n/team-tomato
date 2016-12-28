@@ -1,0 +1,42 @@
+Please note that here 0 represents an impassible obsticle, and the characters >v<^ represent players in the directions right, down, left and up respectively.
+
+The player to the left catches the right player-s slip stream. If he manages to hit him, he will destroy him.
+
+0000000000000000000000000000000000000000
+0   >               >           0 000000
+0 00000000000000000000000000000 0      0
+0 000           0000            0 0000 0
+0 00000000000000000000 000 000000 0000 0
+0 0                    000             0
+0 00000000000000000000 0000000000 000000
+0           00000000         0000      0
+00000000000            0000000000 000  0
+0000000000000000000000000000000000000000
+
+
+The player here has antered a dead end and is destined to crash (no reverse turns are possible).
+
+0000000000000000000000000000000000000000
+0                               0 000000
+0 00000000000000000000000000000 0      0
+0 000           0000            0 0000 0
+0 00000000000000000000 000 000000 0000 0
+0 0               <    000             0
+0 00000000000000000000 0000000000 000000
+0           00000000         0000      0
+00000000000            0000000000 000  0
+0000000000000000000000000000000000000000
+
+
+The two players here are destined for a head-on collision in which both of them will be destroyed.
+
+0000000000000000000000000000000000000000
+0   >               <           0 000000
+0 00000000000000000000000000000 0      0
+0 000           0000            0 0000 0
+0 00000000000000000000 000 000000 0000 0
+0 0                    000             0
+0 00000000000000000000 0000000000 000000
+0           00000000         0000      0
+00000000000            0000000000 000  0
+0000000000000000000000000000000000000000
