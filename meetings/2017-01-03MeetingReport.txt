@@ -1,0 +1,22 @@
+A team tomato meeting was held on 3.01.2017 in Telerik Academy. 
+
+Attendees:
+ShwangShwing
+flash
+Procelius
+
+Points discussed:
+
+1. Proper tool for creating UML class diagrams. This is needed both for creating the final software architecture and for presenting it in the end.
+The tool chosen was NClass (http://nclass.sourceforge.net/index.html please download).
+Advantages of the tool are:
+- easy to use
+- UML elements are visualized correctly and all the neccessary elements for the creating of the class diagram were available
+- multiplatform (mono support for none windows users) as currently it is not clear if all of the team members have windows
+- generates C# code automatically
+
+2. A team_contacts.txt file was created with the contacts of the team members for easier communication. PLEASE FILL IN!
+
+3. The final project architecture was scheduled for thursday, 2017-01-05-17:00 in Telerik Academy. Then the (supposedly) final UML diagram will be created with an emphasis on completeness. This will allow the team members to work more independently from each other.
+
+Next meeting: 2017-01-05-17:00 in Telerik Academy

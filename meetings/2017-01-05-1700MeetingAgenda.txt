@@ -1,0 +1,8 @@
+Time: 2017-01-05 17:00
+Place: Telerik Academy
+
+Agenda:
+1. Creating and finalizing the project architecture.
+The project architecture will be discussed and a final UML diagram of the basic structure will be created. The idea is for the necessary classes and interfaces to be easily extensible so that the team member working on a specific feature will need less coordination with the other team members. 
+The UML will be created with the NClass tool (http://nclass.sourceforge.net/index.html please download). 
+An attempt to include gchankov via a conference call will be made as he is not in Sofia.
