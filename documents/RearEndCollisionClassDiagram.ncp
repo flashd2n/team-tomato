@@ -1,0 +1,538 @@
+<Project>
+  <Name>RearEndCollision</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>RearEndCollision</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>GameEngine</Name>
+        <Access>Public</Access>
+        <Location left="722" top="834" />
+        <Size width="248" height="228" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">ulong currentGameTick</Member>
+        <Member type="Field">List&lt;Commad&gt; commandList</Member>
+        <Member type="Method">public ulong AdvanceOneTick()</Member>
+        <Member type="Method">public void NewMethod(char[,] map)</Member>
+        <Member type="Method">public void AddPlayers(int playerCount)</Member>
+        <Member type="Method">public void PushCommand(Command playerCommand)</Member>
+        <Member type="Method">public char[,] GetCurrentMapAndPlayers()</Member>
+        <Member type="Method">public void LoadMap(MapGenerator mg)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ICommandReciever</Name>
+        <Access>Public</Access>
+        <Location left="906" top="597" />
+        <Size width="222" height="132" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void PushCommand(Command cmd)</Member>
+      </Entity>
+      <Entity type="Structure">
+        <Name>Command</Name>
+        <Access>Public</Access>
+        <Location left="1196" top="575" />
+        <Size width="262" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public ulong GameTick { get; set; }</Member>
+        <Member type="Property">public int PlayerId { get; set; }</Member>
+        <Member type="Property">public CommandType PlayerCommand { get; set; }</Member>
+      </Entity>
+      <Entity type="Enum">
+        <Name>CommandType</Name>
+        <Access>Public</Access>
+        <Location left="1525" top="597" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Idle</Value>
+        <Value>GoUp</Value>
+        <Value>GoRight</Value>
+        <Value>GoDown</Value>
+        <Value>GoLeft</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>Visualizer</Name>
+        <Access>Public</Access>
+        <Location left="582" top="1117" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">IVisualizable mapWithPlayers</Member>
+        <Member type="Method">public abstract void SetMapAndPlayerSource(IVisualizable mapAndPlayers)</Member>
+        <Member type="Method">public abstract void VisualizeNow()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IVisualizable</Name>
+        <Access>Public</Access>
+        <Location left="677" top="555" />
+        <Size width="162" height="131" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">char[,] GetCurrentMapAndPlayers()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConsoleVisualizer</Name>
+        <Access>Public</Access>
+        <Location left="582" top="1415" />
+        <Size width="162" height="150" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">IVisualizable mapWithPlayers</Member>
+        <Member type="Method">public void SetMapAndPlayerSource(IVisualizable mapAndPlayers)</Member>
+        <Member type="Method">public void VisualizeNow()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GraphicalVisualizer</Name>
+        <Access>Public</Access>
+        <Location left="841" top="1415" />
+        <Size width="162" height="150" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">IVisualizable mapWithPlayers</Member>
+        <Member type="Method">public void SetMapAndPlayerSource(IVisualizable mapAndPlayers)</Member>
+        <Member type="Method">public void VisualizeNow()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>VisualizerFactory</Name>
+        <Access>Public</Access>
+        <Location left="684" top="1646" />
+        <Size width="264" height="125" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public Visualizer GetVisualizer(string visualizerType)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CommandDispatcher</Name>
+        <Access>Public</Access>
+        <Location left="1030" top="376" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void DispatchCommands()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PlayerInput</Name>
+        <Access>Public</Access>
+        <Location left="1883" top="1104" />
+        <Size width="162" height="184" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public abstract void ProcessPlayerInput()</Member>
+        <Member type="Method">public abstract Command GetCommand()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ICommandGenerator</Name>
+        <Access>Public</Access>
+        <Location left="1844" top="743" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">Command GetCommand()</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IInputSource</Name>
+        <Access>Public</Access>
+        <Location left="1457" top="995" />
+        <Size width="162" height="120" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">void ProcessInput()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>KeyboardInputSource</Name>
+        <Access>Public</Access>
+        <Location left="1287" top="1180" />
+        <Size width="162" height="135" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>LocalPlayerInput</Name>
+        <Access>Public</Access>
+        <Location left="1577" top="1388" />
+        <Size width="162" height="175" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void ProcessPlayerInput()</Member>
+        <Member type="Method">public Command GetCommand()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NetworkPlayerInput</Name>
+        <Access>Public</Access>
+        <Location left="1883" top="1388" />
+        <Size width="162" height="175" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void ProcessPlayerInput()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AiPlayerInput</Name>
+        <Access>Public</Access>
+        <Location left="2102" top="1406" />
+        <Size width="162" height="175" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void ProcessPlayerInput()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PlayerInputFactory</Name>
+        <Access>Public</Access>
+        <Location left="2482" top="1578" />
+        <Size width="264" height="125" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public Visualizer GetPlayerInput(string visualizerType)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MapGenerator</Name>
+        <Access>Public</Access>
+        <Location left="1336" top="1798" />
+        <Size width="284" height="140" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public abstract char[,] GenerateMap()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MapRandomGenerator</Name>
+        <Access>Public</Access>
+        <Location left="1100" top="2053" />
+        <Size width="267" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public char[,] GenerateMap()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MapGetFromNetworkGenerator</Name>
+        <Access>Public</Access>
+        <Location left="1495" top="2053" />
+        <Size width="267" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public char[,] GenerateMap()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>NetworkCommunicator</Name>
+        <Access>Public</Access>
+        <Location left="1759" top="1781" />
+        <Size width="162" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void GetMap()</Member>
+        <Member type="Method">void PushCommand(Command cmd)</Member>
+        <Member type="Method">public void Connect()</Member>
+        <Member type="Method">public void Host()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GameController</Name>
+        <Access>Public</Access>
+        <Location left="557" top="45" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="1" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="0" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>845</X>
+          <Y>809</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>981</X>
+          <Y>765</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="0" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="4" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>549</X>
+          <Y>1210</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>652</X>
+          <Y>647</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Generalization" first="6" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="7" second="4">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="8" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>973</X>
+          <Y>1739</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1048</X>
+          <Y>1501</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="8" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>649</X>
+          <Y>1728</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>541</X>
+          <Y>1474</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="9" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>986</X>
+          <Y>422</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>881</X>
+          <Y>685</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="9" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1251</X>
+          <Y>424</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2065</X>
+          <Y>819</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="11" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1171</X>
+          <Y>718</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="10" second="11">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="13" second="12">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="14" second="13">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1534</X>
+          <Y>1449</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1518</X>
+          <Y>1246</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Generalization" first="14" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="15" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="16" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="17" second="16">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="17" second="15">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>2084</X>
+          <Y>1634</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="17" second="14">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1784</X>
+          <Y>1576</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Generalization" first="19" second="18">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="20" second="18">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="0" second="18">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1010</X>
+          <Y>954</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1311</X>
+          <Y>1841</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="21" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1834</X>
+          <Y>1756</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="15" second="21">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="22" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="22" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="22" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="22" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="22" second="18">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="22" second="21">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="20" second="21">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="22" second="13">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
