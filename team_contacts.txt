@@ -14,4 +14,10 @@ Procelius
 Anton Markov
 tel. 0885262670
 email: procelius@gmail.com
-https://www.facebook.com/anton.markov
+facebook: https://www.facebook.com/anton.markov
+
+bohi
+Dimitar Parvanov
+tel. 0897883043
+email: dparvanov90@gmail.com
+facebook: https://www.facebook.com/mulniq
