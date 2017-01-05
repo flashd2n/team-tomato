@@ -1,0 +1,29 @@
+A team tomato meeting was held on 5.01.2017 in Telerik Academy. 
+
+Attendees:
+ShwangShwing
+flash
+vas
+Nikola Nikolov (please put you contacts)
+
+The basic class diagram was made. It is the basis over which the code will be written. The final code will surely differ from this structure, it's just a start. A code was generated based on the diagram. Find the diagram in documents/RearEndCollisionClassDiagram.ncp in the repository. Open with NClass.
+Some points:
+The game map will be two dimentional array containing the following characters:
+# - inpassible field
+(space) - passible field 
+^ - player facing up
+> - player facing right
+v - player facing down
+< - player facing left
+The map generator must generate only the inpassible and passible fields
+
+Tasks: 
+ShwangShwing - gamecontroller and engine
+flash - visualizers
+vas - map generators
+gchankov - network
+the rest of the tasks, please choose a task and go ahead 
+
+No next meeting was scheduled.
+
+
