@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AiPlayerInput.cs" />
+    <Compile Include="IInputSource.cs" />
     <Compile Include="KeyboardInputSource.cs" />
     <Compile Include="LocalPlayerInput.cs" />
     <Compile Include="NetworkPlayerInput.cs" />

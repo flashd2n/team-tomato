@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ConsoleVisualizer.cs" />
     <Compile Include="GraphicalVisualizer.cs" />
+    <Compile Include="IVisualizable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Visualizer.cs" />
     <Compile Include="VisualizerFactory.cs" />

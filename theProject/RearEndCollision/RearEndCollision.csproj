@@ -50,8 +50,6 @@
     <Compile Include="GameEngine.cs" />
     <Compile Include="ICommandGenerator.cs" />
     <Compile Include="ICommandReciever.cs" />
-    <Compile Include="IInputSource.cs" />
-    <Compile Include="IVisualizable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
