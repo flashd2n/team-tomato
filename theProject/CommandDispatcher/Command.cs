@@ -6,40 +6,12 @@ namespace RearEndCollision
 {
 	public struct Command
 	{
-		public ulong GameTick
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-			set
-			{
-				throw new NotImplementedException();
-			}
-		}
+        public ulong GameTick;
 
-		public int PlayerId
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-			set
-			{
-				throw new NotImplementedException();
-			}
-		}
 
-		public CommandType PlayerCommand
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-			set
-			{
-				throw new NotImplementedException();
-			}
-		}
+        public int PlayerId;
+
+
+        public CommandType PlayerCommand;
 	}
 }
