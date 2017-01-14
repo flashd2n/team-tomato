@@ -6,5 +6,9 @@ namespace RearEndCollision
 {
 	public class GameController
 	{
+        static void Main()
+        {
+
+        }
 	}
 }

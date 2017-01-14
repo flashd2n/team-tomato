@@ -6,7 +6,7 @@ namespace RearEndCollision
 {
 	public class MapRandomGenerator : MapGenerator
 	{
-		public char[,] GenerateMap()
+		public override char[,] GenerateMap()
 		{
 			throw new NotImplementedException();
 		}

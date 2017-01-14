@@ -11,7 +11,7 @@ namespace RearEndCollision
 			throw new NotImplementedException();
 		}
 
-		void PushCommand(Command cmd)
+		public void PushCommand(Command cmd)
 		{
 			throw new NotImplementedException();
 		}

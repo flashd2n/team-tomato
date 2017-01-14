@@ -6,7 +6,7 @@ namespace RearEndCollision
 {
 	public class PlayerInputFactory
 	{
-		public Visualizer GetPlayerInput(string visualizerType)
+		public PlayerInput GetPlayerInput(string inputPlayerType)
 		{
 			throw new NotImplementedException();
 		}

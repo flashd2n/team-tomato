@@ -6,12 +6,12 @@ namespace RearEndCollision
 {
 	public class LocalPlayerInput : PlayerInput
 	{
-		public void ProcessPlayerInput()
+		public override void ProcessPlayerInput()
 		{
 			throw new NotImplementedException();
 		}
 
-		public Command GetCommand()
+		public override Command GetCommand()
 		{
 			throw new NotImplementedException();
 		}

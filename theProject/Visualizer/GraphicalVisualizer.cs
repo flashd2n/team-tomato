@@ -8,12 +8,12 @@ namespace RearEndCollision
 	{
 		IVisualizable mapWithPlayers;
 
-		public void SetMapAndPlayerSource(IVisualizable mapAndPlayers)
+		public override void SetMapAndPlayerSource(IVisualizable mapAndPlayers)
 		{
 			throw new NotImplementedException();
 		}
 
-		public void VisualizeNow()
+		public override void VisualizeNow()
 		{
 			throw new NotImplementedException();
 		}

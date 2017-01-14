@@ -7,7 +7,7 @@ namespace RearEndCollision
 	public class GameEngine : ICommandReciever, IVisualizable
 	{
 		ulong currentGameTick;
-		List<Commad> commandList;
+		List<Command> commandList;
 
 		public ulong AdvanceOneTick()
 		{

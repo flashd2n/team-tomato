@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C68C2BF9-DE0C-4144-8247-B16A9CC93797}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{B44AE666-1714-46BC-8F2D-957EB0D68712}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RearEndCollision2</RootNamespace>
-    <AssemblyName>RearEndCollision2</AssemblyName>
+    <RootNamespace>CommandDispatcher</RootNamespace>
+    <AssemblyName>CommandDispatcher</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,34 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameController.cs" />
-    <Compile Include="GameEngine.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="CommandDispatcher.cs" />
+    <Compile Include="CommandType.cs" />
+    <Compile Include="ICommandGenerator.cs" />
+    <Compile Include="ICommandReciever.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CommandDispatcher\CommandDispatcher.csproj">
-      <Project>{b44ae666-1714-46bc-8f2d-957eb0d68712}</Project>
-      <Name>CommandDispatcher</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LAN\LAN.csproj">
-      <Project>{b0e0b5fb-b0d3-4546-a381-8cc62fad6fb9}</Project>
-      <Name>LAN</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MapGenerator\MapGenerator.csproj">
-      <Project>{b5e1dc70-f2c3-4bdf-a92a-aa4040f33c57}</Project>
-      <Name>MapGenerator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PlayerInput\PlayerInput.csproj">
-      <Project>{9f057016-b832-44a8-b7e6-92aa8cd5d213}</Project>
-      <Name>PlayerInput</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Visualizer\Visualizer.csproj">
-      <Project>{754e292d-7dba-4064-8203-52313084180d}</Project>
-      <Name>Visualizer</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

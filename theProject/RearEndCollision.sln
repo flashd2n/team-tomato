@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LAN", "LAN\LAN.csproj", "{B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RearEndCollision", "RearEndCollision\RearEndCollision.csproj", "{C68C2BF9-DE0C-4144-8247-B16A9CC93797}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDispatcher", "CommandDispatcher\CommandDispatcher.csproj", "{B44AE666-1714-46BC-8F2D-957EB0D68712}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C68C2BF9-DE0C-4144-8247-B16A9CC93797}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C68C2BF9-DE0C-4144-8247-B16A9CC93797}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C68C2BF9-DE0C-4144-8247-B16A9CC93797}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B44AE666-1714-46BC-8F2D-957EB0D68712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B44AE666-1714-46BC-8F2D-957EB0D68712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B44AE666-1714-46BC-8F2D-957EB0D68712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B44AE666-1714-46BC-8F2D-957EB0D68712}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
