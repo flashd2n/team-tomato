@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="RearEndCollisionDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommandDispatcher\CommandDispatcher.csproj">

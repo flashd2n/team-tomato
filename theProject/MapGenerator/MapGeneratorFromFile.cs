@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RearEndCollision
 {
-    class MapGeneratorFromFile : MapGenerator
+    public class MapGeneratorFromFile : MapGenerator
     {
         public string Filename { get; private set; }
 
