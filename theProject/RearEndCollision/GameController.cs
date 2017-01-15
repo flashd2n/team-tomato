@@ -20,7 +20,7 @@ namespace RearEndCollision
             //Generating map
             MapGeneratorFactory mgf = new MapGeneratorFactory();
             //MapGenerator mg = mgf.GetMapGenerator("empty", 25, 100);
-            MapGenerator mg = mgf.GetMapGenerator("file", "..\\..\\testmap.txt");
+            MapGenerator mg = mgf.GetMapGenerator("file", "..\\..\\DemoMaps\\testmap.txt");
 
             VisualizerFactory vf = new VisualizerFactory();
 

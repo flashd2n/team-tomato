@@ -17,6 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandDispatcher", "Comman
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player\Player.csproj", "{7D36D4C9-6734-47B2-A969-688BADACB1DD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Main TODOs", "Main TODOs", "{5403B101-6426-48C2-9E13-ED31790F7503}"
+	ProjectSection(SolutionItems) = preProject
+		Refactoring.txt = Refactoring.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
