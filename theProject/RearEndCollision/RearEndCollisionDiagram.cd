@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RearEndCollision.CommandDispatcher">
+    <Position X="24.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.NetworkCommunicator" BaseTypeListCollapsed="true">
+    <Position X="22" Y="5" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RearEndCollision.PlayerState" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RearEndCollision.AiPlayerInput">
+    <Position X="34.5" Y="8" Width="1.5" />
+    <InheritanceLine Type="RearEndCollision.PlayerInput" FixedToPoint="true">
+      <Path>
+        <Point X="35.25" Y="7.44" />
+        <Point X="35.25" Y="8" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.KeyboardInputSource">
+    <Position X="30.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.LocalPlayerInput">
+    <Position X="36.5" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.NetworkPlayerInput">
+    <Position X="32.5" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.NoSuchPlayerTypeException">
+    <Position X="36.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.PlayerInput">
+    <Position X="34.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RearEndCollision.PlayerInputFactory">
+    <Position X="32.25" Y="5.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.GameController">
+    <Position X="24" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAABAAAAAA=</HashCode>
+      <FileName>GameController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RearEndCollision.GameEngine" BaseTypeListCollapsed="true">
+    <Position X="26.5" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAECgBCAEAAAAAAAAAAAGgAAABCACAkAwAAAIgAAg=</HashCode>
+      <FileName>GameEngine.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="commandList" />
+      <Field Name="playerStates" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RearEndCollision.ConsoleVisualizer">
+    <Position X="38.75" Y="8.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.GraphicalVisualizer">
+    <Position X="41.5" Y="8.5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.Visualizer">
+    <Position X="40" Y="5.75" Width="2.25" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Field Name="MapWithPlayers" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RearEndCollision.VisualizerFactory">
+    <Position X="38.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.MapGenerator">
+    <Position X="35.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.MapGeneratorFactory">
+    <Position X="31.5" Y="0.75" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.MapGetFromNetworkGenerator">
+    <Position X="33" Y="3.75" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.MapRandomGenerator">
+    <Position X="36" Y="3.75" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.MapGenerateEmpty">
+    <Position X="30.25" Y="3.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RearEndCollision.MapGeneratorFromFile">
+    <Position X="39.5" Y="3.75" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Struct Name="RearEndCollision.Command">
+    <Position X="27.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Field Name="PlayerCommand" />
+    </ShowAsAssociation>
+  </Struct>
+  <Interface Name="RearEndCollision.ICommandGenerator">
+    <Position X="23" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="RearEndCollision.ICommandReciever">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="RearEndCollision.IVisualizable">
+    <Position X="43.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="RearEndCollision.CommandType">
+    <Position X="30.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

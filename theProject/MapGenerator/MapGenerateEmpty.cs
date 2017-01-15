@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RearEndCollision
 {
-    class MapGenerateEmpty : MapGenerator
+    public class MapGenerateEmpty : MapGenerator
     {
         //There is no : abstract base.Class implementation
         // TODO: to be removed and replaced with functional implementation
