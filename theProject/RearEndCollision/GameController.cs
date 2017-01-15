@@ -51,7 +51,7 @@ namespace RearEndCollision
                     cd.DispatchCommands();
                     engine.AdvanceOneTick();
                     vis.VisualizeNow();
-                    lastAdvanceTime.AddMilliseconds(GAME_TICK_LENGTH_MS);
+                    lastAdvanceTime = lastAdvanceTime.AddMilliseconds(GAME_TICK_LENGTH_MS);
                     if (!engine.IsGameRunning)
                     {
                         break;

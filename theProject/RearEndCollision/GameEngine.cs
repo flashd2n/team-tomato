@@ -6,7 +6,7 @@ namespace RearEndCollision
 {
     public class GameEngine : ICommandReciever, IVisualizable
     {
-        const int NORMAL_SPEED_PER_TICK = 10;
+        const int NORMAL_SPEED_PER_TICK = 100;
         private ulong currentGameTick;
         private Queue<Command> commandList;
         private IDictionary<int, PlayerState> playerStates; //the key is the player id
