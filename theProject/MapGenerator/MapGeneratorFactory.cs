@@ -8,6 +8,9 @@ namespace RearEndCollision
 {
     public class MapGeneratorFactory
     {
+        //this factory is doing nothing
+        //TODO: apply from file generation
+        //TODO: Randomg MapGenerator to use simple Prime Aglo
         public MapGenerator GetMapGenerator(string type, params Object[] additionalParams)
         {
             switch (type)

@@ -8,6 +8,8 @@ namespace RearEndCollision
 {
     class MapGenerateEmpty : MapGenerator
     {
+        //There is no : abstract base.Class implementation
+        // TODO: to be removed and replaced with functional implementation
         private int rows;
         private int columns;
 
@@ -16,6 +18,7 @@ namespace RearEndCollision
             this.rows = rows;
             this.columns = columns;
         }
+        // use file versions - this is doing nothing
         public override char[,] GenerateMap()
         {
             char[,] generatedMap = new char[rows, columns];

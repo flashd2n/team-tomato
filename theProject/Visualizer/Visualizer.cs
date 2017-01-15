@@ -8,10 +8,10 @@ namespace RearEndCollision
 	{
 		protected IVisualizable MapWithPlayers;
 
-        public Visualizer(IVisualizable mapWithPlayers)
-        {
-            this.MapWithPlayers = mapWithPlayers;
-        }
+		public Visualizer(IVisualizable mapWithPlayers)
+		{
+			this.MapWithPlayers = mapWithPlayers;
+		}
 
 		public abstract void VisualizeNow();
         public abstract void DisplayMessage(string message);

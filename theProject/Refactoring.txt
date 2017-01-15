@@ -1,0 +1,11 @@
+1. Remove imperative implementation from the #GameEngine to improve Encapsulation
+- only declerative method calls of Key-Generators
+
+2. The LAN should implement only:
+- players current position
+- map pattern
+
+3.Visualizer finalyze the Console Visualisation
+
+4.Stick only to * Last man standing
+The easiest to implement. The last player not killed wins.
