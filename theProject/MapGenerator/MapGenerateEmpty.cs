@@ -9,7 +9,7 @@ namespace RearEndCollision
     class MapGenerateEmpty : MapGenerator
     {
         //There is no : abstract base.Class implementation
-        // TODO: to be removed with functional implementation
+        // TODO: to be removed and replaced with functional implementation
         private int rows;
         private int columns;
 
