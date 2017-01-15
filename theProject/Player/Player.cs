@@ -8,6 +8,8 @@ namespace RearEndCollision
 {
     public class PlayerState: IComparable<PlayerState>
     {
+        public const int POSITION_DIVIDER = 4096;
+
         public int PlayerId;
         public long PlayerRow; //one field equals to 512 steps
         public long PlayerCol; //one field equals to 512 steps

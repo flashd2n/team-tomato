@@ -72,14 +72,14 @@ namespace RearEndCollision
                     isPlayerDiff = player.Value.CompareTo(prevPlayerState) != 0;
                     if (isPlayerDiff)
                     {
-                        Console.SetCursorPosition((int)(prevPlayerState.PlayerRow / 256) + 1, (int)(prevPlayerState.PlayerCol / 256) + 1);
+                        Console.SetCursorPosition((int)(prevPlayerState.PlayerCol / PlayerState.POSITION_DIVIDER) + 1, (int)(prevPlayerState.PlayerRow / PlayerState.POSITION_DIVIDER) + 1);
                         Console.Write(' ');
                     }
                 }
 
                 if (!player.Value.IsDead && isPlayerDiff)
                 {
-                    Console.SetCursorPosition((int)(player.Value.PlayerRow / 256) + 1, (int)(player.Value.PlayerCol / 256) + 1);
+                    Console.SetCursorPosition((int)(player.Value.PlayerCol / PlayerState.POSITION_DIVIDER) + 1, (int)(player.Value.PlayerRow / PlayerState.POSITION_DIVIDER) + 1);
                     char playerChar = (char)('0' + player.Value.PlayerId);
                     switch (player.Value.PlayerDirection)
                     {
