@@ -68,6 +68,10 @@
       <Project>{9f057016-b832-44a8-b7e6-92aa8cd5d213}</Project>
       <Name>PlayerInput</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Player\Player.csproj">
+      <Project>{7d36d4c9-6734-47b2-a969-688badacb1dd}</Project>
+      <Name>Player</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Visualizer\Visualizer.csproj">
       <Project>{754e292d-7dba-4064-8203-52313084180d}</Project>
       <Name>Visualizer</Name>

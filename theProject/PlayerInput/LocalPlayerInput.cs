@@ -36,22 +36,22 @@ namespace RearEndCollision
             KeyboardInputSource kis = KeyboardInputSource.GetKeyboardInputSource();
             if (kis.HasKeyBeenPressed(keyUp))
             {
-                Console.WriteLine("UP");
+                //Console.WriteLine("UP");
                 c.PlayerCommand = CommandType.GoUp;
             }
             if (kis.HasKeyBeenPressed(keyRight))
             {
-                Console.WriteLine("RIGHT");
+                //Console.WriteLine("RIGHT");
                 c.PlayerCommand = CommandType.GoRight;
             }
             if (kis.HasKeyBeenPressed(keyDown))
             {
-                Console.WriteLine("DOWN");
+                //Console.WriteLine("DOWN");
                 c.PlayerCommand = CommandType.GoDown;
             }
             if (kis.HasKeyBeenPressed(keyLeft))
             {
-                Console.WriteLine("LEFT");
+                //Console.WriteLine("LEFT");
                 c.PlayerCommand = CommandType.GoLeft;
             }
 

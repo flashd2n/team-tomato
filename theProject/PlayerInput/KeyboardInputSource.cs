@@ -16,7 +16,7 @@ namespace RearEndCollision
             return keyboardInputSourceInstance;
         }
 
-        HashSet<ConsoleKey> waitingKeys;
+        ISet<ConsoleKey> waitingKeys;
         private KeyboardInputSource()
         {
             waitingKeys = new HashSet<ConsoleKey>();

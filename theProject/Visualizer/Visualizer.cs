@@ -6,9 +6,12 @@ namespace RearEndCollision
 {
 	public abstract class Visualizer
 	{
-		IVisualizable mapWithPlayers;
+		protected IVisualizable MapWithPlayers;
 
-		public abstract void SetMapAndPlayerSource(IVisualizable mapAndPlayers);
+        public Visualizer(IVisualizable mapWithPlayers)
+        {
+            this.MapWithPlayers = mapWithPlayers;
+        }
 
 		public abstract void VisualizeNow();
 	}

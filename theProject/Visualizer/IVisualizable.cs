@@ -6,6 +6,7 @@ namespace RearEndCollision
 {
 	public interface IVisualizable
 	{
-		char[,] GetCurrentMapAndPlayers();
+		char[,] GetCurrentMap();
+        IDictionary<int, PlayerState> GetPlayers();
 	}
 }

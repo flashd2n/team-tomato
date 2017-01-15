@@ -4,18 +4,15 @@ using System.Text;
 
 namespace RearEndCollision
 {
-	public class GraphicalVisualizer : Visualizer
-	{
-		IVisualizable mapWithPlayers;
+    public class GraphicalVisualizer : Visualizer
+    {
+        public GraphicalVisualizer(IVisualizable mapWithPlayers) : base(mapWithPlayers)
+        {
+        }
 
-		public override void SetMapAndPlayerSource(IVisualizable mapAndPlayers)
-		{
-			throw new NotImplementedException();
-		}
-
-		public override void VisualizeNow()
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public override void VisualizeNow()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
