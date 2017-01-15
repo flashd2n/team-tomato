@@ -25,7 +25,9 @@ namespace RearEndCollision
             random = new Random();
         }
 
-        public bool IsGameRunning { set; private get; }
+        public bool IsGameRunning { get; private set; }
+        public int WinningPlayerId { get; private set; }
+        public bool IsGameDraw { get; private set; }
 
         public ulong StartGame()
         {
@@ -68,6 +70,10 @@ namespace RearEndCollision
 
         public ulong AdvanceOneTick()
         {
+            if (!IsGameRunning)
+            {
+                return currentGameTick;
+            }
             while (commandList.Count > 0)
             {
                 Command c = commandList.Dequeue();
@@ -170,6 +176,27 @@ namespace RearEndCollision
             }
 
             processPlayerCollisions();
+
+            if (this.playersAlive <= 0)
+            {
+                IsGameDraw = true;
+                IsGameRunning = false;
+                return currentGameTick;
+            }
+            else if (this.playersAlive == 1)
+            {
+                IsGameDraw = false;
+                IsGameRunning = false;
+
+                foreach (var player in this.playerStates)
+                {
+                    if (!player.Value.IsDead)
+                    {
+                        WinningPlayerId = player.Value.PlayerId;
+                    }
+                }
+                return currentGameTick;
+            }
 
             return ++currentGameTick;
         }

@@ -14,5 +14,6 @@ namespace RearEndCollision
         }
 
 		public abstract void VisualizeNow();
+        public abstract void DisplayMessage(string message);
 	}
 }

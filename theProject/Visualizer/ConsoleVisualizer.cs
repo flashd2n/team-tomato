@@ -101,5 +101,15 @@ namespace RearEndCollision
             }
             prevPlayerStates = currentPlayerStates;
         }
-	}
+
+        public override void DisplayMessage(string message)
+        {
+            Console.Clear();
+            this.isMapDrawn = false;
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine(new String('*', message.Length + 2));
+            Console.WriteLine("*{0}*", message);
+            Console.WriteLine(new String('*', message.Length + 2));
+        }
+    }
 }

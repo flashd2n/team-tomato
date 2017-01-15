@@ -10,6 +10,11 @@ namespace RearEndCollision
         {
         }
 
+        public override void DisplayMessage(string message)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void VisualizeNow()
         {
             throw new NotImplementedException();

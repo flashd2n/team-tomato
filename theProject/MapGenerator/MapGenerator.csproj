@@ -49,6 +49,7 @@
     <Compile Include="MapGenerateEmpty.cs" />
     <Compile Include="MapGenerator.cs" />
     <Compile Include="MapGeneratorFactory.cs" />
+    <Compile Include="MapGeneratorFromFile.cs" />
     <Compile Include="MapGetFromNetworkGenerator.cs" />
     <Compile Include="MapRandomGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

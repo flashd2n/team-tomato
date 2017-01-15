@@ -28,6 +28,12 @@ namespace RearEndCollision
                         throw new ArgumentException(string.Format("Rows must be between {0} and {1} and columns must be between {2} and {3}", 0, MapGenerator.MAX_ROWS, 0, MapGenerator.MAX_COLS));
                     }
                     return new MapGenerateEmpty(rows, cols);
+                case "file":
+                    if (!(additionalParams[0] is string))
+                    {
+                        throw new ArgumentException(string.Format("Argument must contain filename"));
+                    }
+                    return new MapGeneratorFromFile((string)additionalParams[0]);
                 default:
                     throw new ArgumentException(string.Format("Unrecognized map generator type {0}", type));
             }
