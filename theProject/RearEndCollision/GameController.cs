@@ -7,6 +7,7 @@ namespace RearEndCollision
 {
 	public class GameController
 	{
+        const int GAME_TICK_LENGTH_MS = 10;
         static void Main()
         {
             List<PlayerInput> playerInputs = new List<PlayerInput>();
@@ -21,6 +22,15 @@ namespace RearEndCollision
 
             GameEngine engine = new GameEngine();
 
+            CommandDispatcher cd = new CommandDispatcher();
+
+            foreach(PlayerInput pi in playerInputs)
+            {
+                cd.AddCommandGenerator(pi);
+            }
+
+            cd.AddCommandReciever(engine);
+
             Visualizer vis = vf.GetVisualizer("console", engine);
             for (int i = 0; i < playerInputs.Count; i++)
             {
@@ -29,12 +39,22 @@ namespace RearEndCollision
             engine.LoadMap(mg);
             engine.StartGame();
 
-            vis.VisualizeNow();
-
+            DateTime lastAdvanceTime = DateTime.UtcNow;
             while(true)
             {
-                playerInputs[0].GetCommand();
-                Thread.Sleep(1000);
+                TimeSpan timeDiff = DateTime.UtcNow - lastAdvanceTime;
+                int millisecondDiff = (int)timeDiff.TotalMilliseconds;
+                if (millisecondDiff >= GAME_TICK_LENGTH_MS)
+                {
+                    cd.DispatchCommands();
+                    engine.AdvanceOneTick();
+                    vis.VisualizeNow();
+                    lastAdvanceTime.AddMilliseconds(GAME_TICK_LENGTH_MS);
+                }
+                else
+                {
+                    Thread.Sleep(GAME_TICK_LENGTH_MS - millisecondDiff);
+                }
             }
 
         }

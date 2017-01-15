@@ -65,16 +65,21 @@ namespace RearEndCollision
             IDictionary<int, PlayerState> currentPlayerStates = this.MapWithPlayers.GetPlayers();
             foreach (var player in currentPlayerStates)
             {
+                bool isPlayerDiff = true;
                 if (prevPlayerStates != null && prevPlayerStates.ContainsKey(player.Key))
-                {
-                    var prevPlayerState = prevPlayerStates[player.Key];
-                    Console.SetCursorPosition((int)(prevPlayerState.PlayerRow / 512) + 1, (int)(prevPlayerState.PlayerCol /512) + 1);
-                    Console.Write(' ');
+                {                    
+                    PlayerState prevPlayerState = prevPlayerStates[player.Key];
+                    isPlayerDiff = player.Value.CompareTo(prevPlayerState) != 0;
+                    if (isPlayerDiff)
+                    {
+                        Console.SetCursorPosition((int)(prevPlayerState.PlayerRow / 256) + 1, (int)(prevPlayerState.PlayerCol / 256) + 1);
+                        Console.Write(' ');
+                    }
                 }
 
-                if (!player.Value.IsDead)
+                if (!player.Value.IsDead && isPlayerDiff)
                 {
-                    Console.SetCursorPosition((int)(player.Value.PlayerRow / 512) + 1, (int)(player.Value.PlayerCol / 512) + 1);
+                    Console.SetCursorPosition((int)(player.Value.PlayerRow / 256) + 1, (int)(player.Value.PlayerCol / 256) + 1);
                     char playerChar = (char)('0' + player.Value.PlayerId);
                     switch (player.Value.PlayerDirection)
                     {

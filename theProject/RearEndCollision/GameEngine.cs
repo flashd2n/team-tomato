@@ -7,7 +7,7 @@ namespace RearEndCollision
 	public class GameEngine : ICommandReciever, IVisualizable
 	{
 		private ulong currentGameTick;
-        private List<Command> commandList;
+        private Queue<Command> commandList;
         private IDictionary<int, PlayerState> playerStates; //the key is the player id
         private char[,] map;
         private char[,] mapAndPlayers;
@@ -18,7 +18,7 @@ namespace RearEndCollision
         public GameEngine()
         {
             currentGameTick = 0;
-            commandList = new List<Command>();
+            commandList = new Queue<Command>();
             playerStates = new Dictionary<int, PlayerState>();
             IsGameRunning = false;
             random = new Random();
@@ -51,11 +51,11 @@ namespace RearEndCollision
                     }
                     fieldsLeft--;
                 }
-                player.Value.PlayerRow = randRow * 512;
-                player.Value.PlayerCol = randCol * 512;
+                player.Value.PlayerRow = randRow * 256;
+                player.Value.PlayerCol = randCol * 256;
                 player.Value.IsDead = false;
                 player.Value.PlayerDirection = 'n';
-                mapAndPlayers[player.Value.PlayerRow / 512, player.Value.PlayerCol / 512] = (char)('0' + player.Key);
+                mapAndPlayers[player.Value.PlayerRow / 256, player.Value.PlayerCol / 256] = (char)('0' + player.Key);
             }
             IsGameRunning = true;
             //for (int i = 0; i < mapRows; i++)
@@ -71,6 +71,70 @@ namespace RearEndCollision
 
         public ulong AdvanceOneTick()
 		{
+            while (commandList.Count > 0)
+            {
+                Command c = commandList.Dequeue();
+                PlayerState affectedPlayer = playerStates[c.PlayerId];
+                switch(c.PlayerCommand)
+                {
+                    case CommandType.GoUp:
+                        if (affectedPlayer.PlayerDirection != 'u')
+                        {
+                            if (affectedPlayer.PlayerDirection == 'r')
+                            {
+                                affectedPlayer.PlayerCol = ((affectedPlayer.PlayerCol + 255) / 256) * 256;
+                            }
+                            else if (affectedPlayer.PlayerDirection == 'l')
+                            {
+                                affectedPlayer.PlayerCol = (affectedPlayer.PlayerCol / 256) * 256;
+                            }
+                            affectedPlayer.PlayerDirection = 'u';
+                        }
+                        break;
+                    case CommandType.GoRight:
+                        if (affectedPlayer.PlayerDirection != 'r')
+                        {
+                            if (affectedPlayer.PlayerDirection == 'd')
+                            {
+                                affectedPlayer.PlayerRow = ((affectedPlayer.PlayerRow + 255) / 256) * 256;
+                            }
+                            else if (affectedPlayer.PlayerDirection == 'u')
+                            {
+                                affectedPlayer.PlayerRow = (affectedPlayer.PlayerRow / 256) * 256;
+                            }
+                            affectedPlayer.PlayerDirection = 'r';
+                        }
+                        break;
+                    case CommandType.GoDown:
+                        if (affectedPlayer.PlayerDirection != 'd')
+                        {
+                            if (affectedPlayer.PlayerDirection == 'r')
+                            {
+                                affectedPlayer.PlayerCol = ((affectedPlayer.PlayerCol + 255) / 256) * 256;
+                            }
+                            else if (affectedPlayer.PlayerDirection == 'l')
+                            {
+                                affectedPlayer.PlayerCol = (affectedPlayer.PlayerCol / 256) * 256;
+                            }
+                            affectedPlayer.PlayerDirection = 'd';
+                        }
+                        break;
+                    case CommandType.GoLeft:
+                        if (affectedPlayer.PlayerDirection != 'r')
+                        {
+                            if (affectedPlayer.PlayerDirection == 'd')
+                            {
+                                affectedPlayer.PlayerRow = ((affectedPlayer.PlayerRow + 255) / 256) * 256;
+                            }
+                            else if (affectedPlayer.PlayerDirection == 'u')
+                            {
+                                affectedPlayer.PlayerRow = (affectedPlayer.PlayerRow / 256) * 256;
+                            }
+                            affectedPlayer.PlayerDirection = 'l';
+                        }
+                        break;
+                }
+            }
             return ++currentGameTick;
 		}
 
@@ -92,7 +156,7 @@ namespace RearEndCollision
 
 		public void PushCommand(Command playerCommand)
 		{
-			throw new NotImplementedException();
+            commandList.Enqueue(playerCommand);
 		}
 
 		public char[,] GetCurrentMap()
