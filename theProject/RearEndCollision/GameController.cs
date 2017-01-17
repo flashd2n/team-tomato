@@ -10,7 +10,7 @@ namespace RearEndCollision
         const int GAME_TICK_LENGTH_MS = 10;
         static void Main()
         {
-            //Player Inputs. Where is the player?
+            
             List<PlayerInput> playerInputs = new List<PlayerInput>();
             PlayerInputFactory pif = new PlayerInputFactory();
             playerInputs.Add(pif.GetPlayerInput(playerInputs.Count, "local", ConsoleKey.W, ConsoleKey.D, ConsoleKey.S, ConsoleKey.A));
@@ -20,7 +20,9 @@ namespace RearEndCollision
             //Generating map
             MapGeneratorFactory mgf = new MapGeneratorFactory();
             //MapGenerator mg = mgf.GetMapGenerator("empty", 25, 100);
-            MapGenerator mg = mgf.GetMapGenerator("file", "..\\..\\DemoMaps\\testmap.txt");
+            
+            var rm = new MapRandomGenerator();//hacked
+            MapGenerator mg = mgf.GetMapGenerator("file",rm.CurrentRandomMap);
 
             VisualizerFactory vf = new VisualizerFactory();
 

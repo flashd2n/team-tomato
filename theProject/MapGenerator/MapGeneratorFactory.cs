@@ -8,11 +8,13 @@ namespace RearEndCollision
 {
     public class MapGeneratorFactory
     {
-        //this factory is doing nothing
-        //TODO: apply from file generation
-        //TODO: Randomg MapGenerator to use simple Prime Aglo
+        private static string currentMapChosen;
+
+
         public MapGenerator GetMapGenerator(string type, params Object[] additionalParams)
         {
+            var rm = new MapRandomGenerator();
+            additionalParams[0] = rm.CurrentRandomMap;
             switch (type)
             {
                 case "empty":
@@ -36,7 +38,7 @@ namespace RearEndCollision
                     {
                         throw new ArgumentException(string.Format("Argument must contain filename"));
                     }
-                    return new MapGeneratorFromFile((string)additionalParams[0]);
+                    return new MapGeneratorFromFile((string) additionalParams[0]);
                 default:
                     throw new ArgumentException(string.Format("Unrecognized map generator type {0}", type));
             }

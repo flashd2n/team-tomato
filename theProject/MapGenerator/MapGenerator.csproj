@@ -57,6 +57,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="DemoMaps\testmap.0.txt" />
+    <Content Include="DemoMaps\testmap.1.txt" />
+    <Content Include="DemoMaps\testmap.2.txt" />
+    <Content Include="DemoMaps\testmap.3.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
